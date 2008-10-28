@@ -14,6 +14,7 @@ require 'spec/matchers/respond_to'
 require 'spec/matchers/satisfy'
 require 'spec/matchers/throw_symbol'
 require 'spec/matchers/operator_matcher'
+require 'spec/matchers/unordered'
 
 module Spec
 
