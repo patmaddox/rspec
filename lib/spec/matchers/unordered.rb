@@ -21,10 +21,10 @@ module Spec
 
     def self.included(klass)
       Array.class_eval do
-        alias_method :old_equality, :==
+        old_equality = instance_method(:==)
 
-        def ==(other)
-          other.is_a?(Bag) ? (other == self) : (old_equality(other))
+        define_method(:==) do |other|
+          other.is_a?(Bag) ? (other == self) : old_equality.bind(self)[other]
         end
       end
     end
