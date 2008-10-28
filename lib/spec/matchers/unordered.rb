@@ -7,8 +7,7 @@ module Spec
       end
 
       def ==(array)
-        size = (@items && array).size
-        size == @items.size && size == array.size
+        (@items && array).size == @items.size
       end
 
       def inspect
